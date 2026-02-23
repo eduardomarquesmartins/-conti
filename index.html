@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>& Conti</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital@0;1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <nav class="navbar custom-nav">
+        <div class="nav-left"> <span class="nav-text">💕 Eduarda & Fernando 💍</span> </div>
+    </nav>
+    <div class="hearts-container" id="hearts-container"></div>
+    <section id="hero" class="hero">
+        <div class="hero-content-wrapper">
+            <div class="save-the-date-banner">
+                <div class="save-date-content">
+                    <span class="save-date-label">Save the Date</span>
+                    <span class="save-date-date">14/03/2026</span>
+                    <span class="save-date-note">Chegada às 15h • Início às 16h</span>
+                    <div class="save-date-location">
+                        <span class="location-text">📍 Portais do Sul – Sítio São José, Viamão – RS</span>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Portais+do+Sul+Viamão+RS"
+                            target="_blank" class="location-link">Ver no Mapa 🗺️</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <header class="section-header custom-gift-header">
+        <div class="gifts-floating-container" id="gifts-floating-container"></div>
+        <div class="container">
+            <div class="gift-header-box">
+                <div class="gift-icons left"> <span class="g-icon bounce">💝</span> <span
+                        class="g-icon twinkle">✨</span> </div>
+                <div class="gift-title-group"> <span class="gift-line-1">Lista de</span> <span
+                        class="gift-line-2">Presentes</span> </div>
+                <div class="gift-icons right"> <span class="g-icon bounce-delay">🎁</span> <span
+                        class="g-icon pulse">🎀</span> </div>
+            </div>
+            <p class="gift-subtitle-static">💡 Os valores são sugestões - contribua com o que desejar!</p>
+        </div>
+    </header>
+    <main class="container">
+        <div id="cards-grid" class="cards-grid"> </div>
+    </main>
+    <div id="modal" class="modal hidden">
+        <div class="modal-content"> <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-title">Título do Presente</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-values">
+                    <div class="value-badge">Total: <span id="modal-total">R$ 0,00</span></div>
+                    <div class="value-badge">Restante: <span id="modal-remaining">R$ 0,00</span></div>
+                </div>
+                <div class="input-group"> <input type="text" id="contributor-name" placeholder="Seu nome"> </div>
+                <div class="input-group"> <input type="text" id="contribution-amount" placeholder="R$ 0,00">
+                    <p class="input-helper">💡 Contribua com qualquer valor que desejar</p>
+                </div> <button class="btn-payment" onclick="showPixStep()">Ir para o pagamento</button>
+                <div class="contributions-section">
+                    <h3>Contribuições:</h3>
+                    <p class="no-contributions">Nenhuma contribuição ainda.</p>
+                    <ul id="contributions-list" class="hidden"></ul>
+                </div>
+                <div id="pix-section" class="hidden">
+                    <hr>
+                    <div class="pix-header"> <span class="pix-icon">💳</span>
+                        <h3>Pague via PIX</h3>
+                    </div>
+                    <p class="pix-instruction">Escaneie o QR Code ou copie o código PIX:</p>
+                    <div class="qr-container"> <img id="qr-code-img" src="" alt="QR Code Pix" /> </div>
+                    <div class="pix-code-section"> <label>Código PIX Copia e Cola:</label>
+                        <div class="pix-code-wrapper"> <input type="text" id="pix-code" readonly> <button
+                                id="btn-copy-pix" class="btn-copy" onclick="copyPixCode()"> 📋 Copiar </button> </div>
+                        <span id="copy-feedback" class="copy-feedback hidden">✅ Copiado!</span>
+                    </div> <button id="btn-confirm-payment" class="btn-confirm-payment" onclick="confirmPayment()"> ✅
+                        Confirmar Pagamento </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="floating-warning" class="floating-warning"> <span class="icon">💡</span> <span class="text">Os valores
+            exibidos são sugestões,<br>contribua com o valor que desejar!</span> </div>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="gifts.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
